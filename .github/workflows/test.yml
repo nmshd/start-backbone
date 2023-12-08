@@ -1,0 +1,35 @@
+name: Start FerretDB instance
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Start Backbone Consumer API
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Start Consumer API
+        uses: ./
+        with:
+          consumerapi-version: v4.1.3
+
+      - run: curl localhost:5000/health
+
+  test-custom-port:
+    name: Start Backbone Consumer API
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Start Consumer API
+        uses: ./
+        with:
+          consumerapi-port: 5001
+          consumerapi-version: v4.1.3
+
+      - run: curl localhost:5001/health

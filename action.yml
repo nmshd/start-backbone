@@ -1,0 +1,26 @@
+name: "FerretDB in GitHub Actions"
+description: "Start a FerretDB instance"
+
+branding:
+  icon: "database"
+  color: "blue"
+
+inputs:
+  consumerapi-version:
+    description: 'Consumer API version'
+    required: true
+  consumerapi-port:
+    description: 'Consumer API port'
+    required: false
+    default: 5000
+
+runs:
+  using: "composite"
+  steps:
+    - run: wget https://raw.githubusercontent.com/nmshd/backbone/capi/${CONSUMERAPI_VERSION}/setup-db/setup-postgres.sql
+      env:
+        CONSUMERAPI_VERSION: ${{ inputs.consumerapi-version }}
+    - run: docker compose up -d
+      env:
+        CONSUMERAPI_TAG: ${{ inputs.consumerapi-version }}
+        PORT: ${{ inputs.consumerapi-port }}
