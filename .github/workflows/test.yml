@@ -19,7 +19,7 @@ jobs:
       - run: curl localhost:5000/health
 
   test-custom-port:
-    name: Start Backbone Consumer API
+    name: Start Backbone Consumer API with custom port
 
     runs-on: ubuntu-latest
 
