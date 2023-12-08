@@ -22,6 +22,10 @@ runs:
       env:
         CONSUMERAPI_VERSION: ${{ inputs.consumerapi-version }}
     - shell: bash
+      run: wget https://raw.githubusercontent.com/nmshd/start-backbone/main/appsettings.override.json
+    - shell: bash
+      run: wget https://raw.githubusercontent.com/nmshd/start-backbone/main/docker-compose.yml
+    - shell: bash
       run: docker compose up -d
       env:
         CONSUMERAPI_TAG: ${{ inputs.consumerapi-version }}
