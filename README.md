@@ -1,4 +1,4 @@
-# FerretDB GitHub Action
+# Backbone GitHub Action
 
 ## Introduction
 
