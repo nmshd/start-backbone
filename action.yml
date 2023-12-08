@@ -2,8 +2,8 @@ name: "Backbone in GitHub Actions"
 description: "Start a Backbone Consumer API instance"
 
 branding:
-  icon: "database"
-  color: "blue"
+  icon: "star"
+  color: "orange"
 
 inputs:
   consumerapi-version:
