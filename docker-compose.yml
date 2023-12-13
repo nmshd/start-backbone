@@ -5,9 +5,8 @@ services:
     hostname: consumer-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80
     ports:
-      - "${PORT}:80"
+      - "${PORT}:8080"
     depends_on:
       database:
         condition: service_started
