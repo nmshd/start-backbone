@@ -7,12 +7,12 @@ branding:
 
 inputs:
   consumerapi-version:
-    description: 'Consumer API version'
+    description: "Consumer API version"
     required: true
   consumerapi-port:
-    description: 'Consumer API port'
+    description: "Consumer API port"
     required: false
-    default: 5000
+    default: "5000"
 
 runs:
   using: "composite"
@@ -24,7 +24,7 @@ runs:
     - shell: bash
       run: wget https://raw.githubusercontent.com/nmshd/start-backbone/main/appsettings.override.json
     - shell: bash
-      run: wget https://raw.githubusercontent.com/nmshd/start-backbone/main/docker-compose.yml
+      run: wget https://raw.githubusercontent.com/nmshd/start-backbone/main/compose.yml
     - shell: bash
       run: docker compose up -d
       env:
